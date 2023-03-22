@@ -70,6 +70,20 @@ public class ShadowCopyAndDeepCopy {
          *  => CopyWithCloneMethod
          */
 
+        // example
+        // assignment
+        AnimalLevel2 a2 = new AnimalLevel2("name0", 0, "name1", 1, "name2", 2);
 
+        AnimalLevel2 a21 = a2;
+
+        System.out.println("a2  hashcode     = " + Integer.toHexString(a2.hashCode()));  // = nhau
+        System.out.println("a21 hashcode     = " + Integer.toHexString(a21.hashCode())); // = nhau
+        a2.setName2("name22");
+        a2.setName1("name12");
+        a2.setName("name02");
+        System.out.println("after change");
+        System.out.println(a2.getName() + " " + a2.getName1() + " " + a2.getName2());
+        System.out.println(a21.getName() + " " + a21.getName1() + " " + a21.getName2());
+        // tất cả đều thay đổi (2 biến đều tham chiếu đến một chỗ), như vậy đã đúng logic
     }
 }
