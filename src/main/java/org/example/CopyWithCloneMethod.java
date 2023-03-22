@@ -104,7 +104,7 @@ class Dog3 implements Cloneable {
 
         dog3.name = dog31.getName();
         dog3.age = dog31.getAge();
-        dog3.setFarm3(new Farm3(dog31.getName()));
+        dog3.setFarm3(new Farm3(dog31.getFarm3().getName()));
 
         return dog3;
     }
@@ -174,7 +174,6 @@ public class CopyWithCloneMethod {
          * Shallow copies are cheap and simple to make. In the above example, we created a shallow copy of the object
          */
         copyWithCloneMethod1();
-
         // deep
         // có nghĩa là với deep copy, gần như là phải new một đối tượng mới xong gán lại
         // khi đó việc thay đổi giá trị của đối tượng này sẽ không ảnh hưởng đến đối tượng khác

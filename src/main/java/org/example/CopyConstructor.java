@@ -22,7 +22,10 @@ class Cat {
 
     private Farm farm;
     public Cat(String name, int age, Farm farm) {
-        this.name = name; // gán object kiểu này (shallow copy)
+        this.name = name;
+        // gán object kiểu này (shallow copy), nhưng String is immutable object,
+        // nghĩa là khi thay đổi giá trị, thì nó tạo đối tượng giá trị mới, chứ không phải chỉnh sửa giá trị cũ
+        // còn với kiểu Object User Define thì nó đúng như logic vẫn nghĩ
         this.age = age;
         this.farm = farm; // shallow copy
     }
@@ -153,8 +156,20 @@ public class CopyConstructor {
         System.out.println("---------end---------");
     }
 
+    public static void stringIsImmutable() {
+        String name = "abc";
+        String name2 = name;
+        System.out.println("before");
+        System.out.println(name.toString());
+        System.out.println(name2.toString());
+        System.out.println("after");
+        name = "def";
+        System.out.println(name.toString());
+        System.out.println(name2.toString());
+    }
     public static void main(String[] args) {
-        copyConstructorShallow();
-        copyConstructorDeep();
+//        copyConstructorShallow();
+//        copyConstructorDeep();
+//        stringIsImmutable();
     }
 }

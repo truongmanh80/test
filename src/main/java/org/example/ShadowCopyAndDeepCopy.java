@@ -32,6 +32,9 @@ public class ShadowCopyAndDeepCopy {
          * With Copy Constructors we can achieve both Shallow Copy and Deep Copy
          *      primitive are by default deep copied
          *      String: thay đổi giá trị theo kiểu gán bằng cũng deep copied
+         *      // gán object kiểu này (shallow copy), nhưng String is immutable object,
+         *      // nghĩa là khi thay đổi giá trị, thì nó tạo đối tượng giá trị mới, chứ không phải chỉnh sửa giá trị cũ
+         *      // còn với kiểu Object User Define thì nó đúng như logic vẫn nghĩ
          * 1.1.1 with shallow (object)
          *          : hiểu là khi thay đổi ở thằng này thì thằng kia cũng thay đổi
          * 1.1.2 with deep copy
@@ -56,6 +59,8 @@ public class ShadowCopyAndDeepCopy {
          * 1.2.1    using assignment operator to create a copy of the reference variable
          *          if we use the assignment operator then it will create a copy of the reference variable
          *          and not the object
+         *    hai biến có giá trị hashcode giống nhau, nghĩa là khi thay đổi ở đối tượng dữ liệu thì tất cả
+         *    biến tham chiều đều thay đổi
          * => CopyWithAssignment.java
          */
 
